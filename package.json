@@ -1,0 +1,19 @@
+{
+  "name": "@evlon/dsh-job-secretary",
+  "version": "0.1.0",
+  "description": "秘书数字员工岗位包：preset（协调者 persona + 工具白名单）+ skill（协调方法论）单目录平铺，安装后落为岗位 preset 与技能",
+  "license": "MIT",
+  "files": [
+    "agent.cordis.yml",
+    "preset.yml",
+    "tool-restrict.mjs",
+    "SKILL.md",
+    "README.md"
+  ],
+  "scripts": {
+    "pack:list": "npm pack --dry-run"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
