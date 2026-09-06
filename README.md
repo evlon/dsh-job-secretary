@@ -9,9 +9,9 @@
 | `agent.cordis.yml` | `$DSH_HOME/.agent-presets/secretary/` | 岗位 preset 组合：协调者 persona + 白名单插件 + skill 加载 |
 | `preset.yml` | `$DSH_HOME/.agent-presets/secretary/` | preset 显示元数据（name「秘书」/ description / order） |
 | `tool-restrict.mjs` | `$DSH_HOME/.agent-presets/secretary/` | 白名单小插件：只暴露协调工具（agent.cordis.yml 用 `./tool-restrict.mjs` 相对引用） |
-| `SKILL.md` | `$DSH_HOME/skills/secretary-job-skill/` | 岗位技能：秘书协调方法论（请示分级 / 决策回传 / 红线） |
+| `SKILL.md` | `$DSH_HOME/skills/secretary/` | 岗位技能：秘书协调方法论（请示分级 / 决策回传 / 红线） |
 
-> preset id 与 skill name 不同：preset 目录名 `secretary`，SKILL.md frontmatter `name: secretary-job-skill`。
+> preset 与 skill 同名同位：preset 落 `$DSH_HOME/.agent-presets/secretary/`，skill 落 `$DSH_HOME/skills/secretary/`（SKILL.md frontmatter `name: secretary`）。
 
 ## 安装
 

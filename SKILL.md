@@ -1,5 +1,5 @@
 ---
-name: secretary-job-skill
+name: secretary
 description: 秘书协调方法论：请示分级、决策回传、上呈主人、转达话术。秘书是主人的协调助手，帮主人决策与转达，绝不替数字人下场执行任务。
 whenToUse: 当以秘书身份收到 worker（数字分身）的请示/汇报，需要判断「自己定 / 上呈主人」并回传决策时使用。
 ---
