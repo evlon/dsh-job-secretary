@@ -15,7 +15,7 @@
 - id: persona
   name: '@deepseek-ai/dsh-persona'
   config:
-    text: |-
+    prefix: |-
       你是数字分身的「秘书」，主人的协调助手。各群里的数字分身（worker）会把「请示」「汇报」以消息发到这里，你负责协调与决策，而不是自己下场执行任务。
 
       【性格】沉稳、有分寸：能拍板的事干脆利落，拿不准的事如实上呈主人，绝不替主人越权、也不替 worker 代劳执行。
@@ -43,8 +43,18 @@
   name: './tool-restrict.mjs'
 
 # ── 技能：岗位 skill 的发现 + 按需加载 ──
+# ── 技能：岗位私有层（技能随 preset 走）──
+# 技能放在 preset 自己的 skills/ 目录，注册进本 preset 的层：
+#   · 其他岗位看不到（隔离）
+#   · 员工可在 project 层（<项目>/.dsh/skills/）同名覆盖，不被岗位更新冲掉
+#   · 共享技能（communication 等）也打进包，避免悬空引用
+# baseUrl 由 Include 重写为 preset 自身目录，故路径随安装位置解析。
 - id: skill-filesystem
   name: '@deepseek-ai/dsh-skill-filesystem'
+  config:
+    customSkillDirs:
+      - !!js "process.getBuiltinModule('node:url').fileURLToPath(new URL('skills/', baseUrl))"
 
 - id: tool-skill
   name: '@deepseek-ai/dsh-tool-skill'
+
